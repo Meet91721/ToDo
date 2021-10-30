@@ -3,30 +3,23 @@ package Source;
 import ConsoleFunJNI.ConsoleFun;
 import ConsoleFunJNI.CFOpts;
 
+import Source.linkedList.List;
+import Source.linkedList.Node;
+
 public class TestCF {
     public static void main(String[] args) {
         ConsoleFun.LoadLib("./ConsoleFun/ConsoleFunJNI");
 
-        CFOpts Options = ConsoleFun.GetOpts();
+        List taskList = new List();
 
-        Options.BG = ConsoleFun.Color.Yellow;
-        Options.Row = 0;
-        Options.Col = 0;
+        for (int i = 0; i < 5; i += 1) {
+            Node task = new Node();
 
-        ConsoleFun.EmptyRect(Options);
+            task.Important = (Math.floor(2 * Math.random()) == 1);
+            task.Value = i;
+            taskList.Insert(task);
+        }
 
-        Options.Row = 2;
-        Options.Col = 2;
-        Options.Rows -= 4;
-        Options.Cols -= 4;
-        Options.FG = ConsoleFun.Color.Black;
-        Options.BG = ConsoleFun.Color.Red;
-        ConsoleFun.FilledRect(Options);
-
-        ConsoleFun.GotoRC(10, 15);
-        ConsoleFun.SetColor(ConsoleFun.Color.Cyan, ConsoleFun.Color.Black);
-        System.out.print("Hello World!");
-
-        return;
+        taskList.Print();
     }
 }

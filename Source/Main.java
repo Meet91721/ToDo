@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 
-
 public class Main {
 
     public void printinFILE() {
@@ -28,7 +27,7 @@ public class Main {
 
     public void ScanFile() {
         File f = new File("try1.txt");
-        
+
     }
 
     public static void main(String[] args) {
