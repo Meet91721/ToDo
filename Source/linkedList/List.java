@@ -122,31 +122,26 @@ public class List {
 
     } // Insert
 
-    public void Print() {
-        System.out.print("\n");
-        ConsoleFun.SetColor(ConsoleFun.Color.White, ConsoleFun.Color.Black);
-        System.out.print(" ! NULL");
-        for (Node temp = Head; temp != null; temp = temp.Next) {
-            System.out.print("\n");
-            if (temp.OverDue()) {
-                ConsoleFun.SetColor(ConsoleFun.Color.Red, ConsoleFun.Color.Black);
-            } else {
-                if (temp.Urgent() && temp.Important) {
-                    ConsoleFun.SetColor(ConsoleFun.Color.Yellow, ConsoleFun.Color.Black);
-                } else if (temp.Urgent()) {
-                    ConsoleFun.SetColor(ConsoleFun.Color.Green, ConsoleFun.Color.Black);
-                } else if (temp.Important) {
-                    ConsoleFun.SetColor(ConsoleFun.Color.Blue, ConsoleFun.Color.Black);
-                } else {
-                    ConsoleFun.SetColor(ConsoleFun.Color.White, ConsoleFun.Color.Black);
-                }
-            }
-            System.out.print(" ! " + temp.Value + " [" + (temp.Urgent() ? "U" : "?") + (temp.Important ? "I" : "?")
-                    + "] Due: " + (temp.Due != null ? temp.Due : "-"));
-        }
-        System.out.print("\n");
-        ConsoleFun.SetColor(ConsoleFun.Color.White, ConsoleFun.Color.Black);
-        System.out.print(" ! NULL");
+    public Node Delete(Node N) {
+        if (N == Head) {
+            // deletion at beginning
+            Head = N.Next;
+            Head.Prev = null;
+        } else {
+            N.Prev.Next = N.Next;
 
-    } // Print
+            if (N.Next != null) {
+                N.Next.Prev = N.Prev;
+            }
+        }
+
+        N.Next = null;
+        N.Prev = null;
+
+        return N;
+    } // Delete
+
+    public void ReInsert(Node N) {
+        Insert(Delete(N));
+    } // ReInsert
 }

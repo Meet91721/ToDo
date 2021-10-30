@@ -7,7 +7,8 @@ public class Node {
     public Node Prev;
     public Node Next;
 
-    public int Value;
+    public String Title;
+    public String Description;
 
     public Date Due;
     public Boolean Important;
