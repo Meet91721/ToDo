@@ -3,12 +3,14 @@ package Source.linkedList;
 import java.util.Date;
 
 public class Node {
-    String Title;
-    String Discription;
+    public String Title;
+    public String Description;
 
-    Date startDate;
-    Date dueDate;
+    public Date startDate;
+    public Date dueDate;
 
-    Node Prev;
-    Node Next;
+    public Boolean Important;
+
+    public Node Prev;
+    public Node Next;
 }
