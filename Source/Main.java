@@ -29,12 +29,12 @@ public class Main {
         }
     }
 
-    public static void ScanFile() throws Exception {
+    public static List ScanFile() throws Exception {
+        List taskList = new List();
         try {
             File f = new File("D://Submissions//TRIES//JAVA INNVOTIVE//Source//try1.txt");
             BufferedReader br = new BufferedReader(new FileReader(f));
             String st;
-            List taskList = new List();
             while ((st = br.readLine()) != null) {
                 // Print the string
                 // System.out.println(st);
@@ -59,24 +59,21 @@ public class Main {
             System.out.println("An unexpected error is occurred.");
             exception.printStackTrace();
         }
+        return taskList;
     }
 
     public static void main(String[] args) throws Exception {
-        List taskList = new List();
-        Node curr = taskList.Head;
+        List taskList = ScanFile();
+        ;
+
         /**
          * FileWriter(String file) Creates a new file. It gets file name in string.
          * FileWriter(File file) Creates a new file. It gets file name in File object.
          */
-        try {
-            ScanFile();
-        } catch (IOException exception) {
-            System.out.println("An unexpected error is occurred.");
-            exception.printStackTrace();
-        }
+        //
+        Node curr = taskList.Head;
 
         while (curr != null) {
-            System.out.println("Hello");
             System.out.println("TITLE: " + curr.Title + "\nDescription: " + curr.Description + "\nDue: " + curr.Due
                     + "\nIs Important? " + curr.Important + "\n\n");
             curr = curr.Next;
