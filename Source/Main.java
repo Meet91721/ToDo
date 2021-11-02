@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         JFrame mainFrame = new JFrame();
-        mainFrame.setSize(400, 500);
+        mainFrame.setSize(1000, 800);
         mainFrame.setVisible(true);
 
         FileHandling fh = new FileHandling();
