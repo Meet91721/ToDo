@@ -39,7 +39,7 @@ public class FileHandling {
                 // Print the string
                 // System.out.println(st);
                 String words[] = st.split("\t");
-                SimpleDateFormat formatter = new SimpleDateFormat("E MMM DD HH:mm:ss yyyy");
+                SimpleDateFormat formatter = new SimpleDateFormat("E MMM DD HH:mm:ss z yyyy");
                 Node temp = new Node();
                 temp.Title = words[0];
                 temp.Description = words[1];

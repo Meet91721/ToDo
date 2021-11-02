@@ -1,8 +1,5 @@
 package Source.linkedList;
 
-import ConsoleFunJNI.ConsoleFun;
-import ConsoleFunJNI.CFOpts;
-
 public class List {
     public Node Head;
 
