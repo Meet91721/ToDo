@@ -32,7 +32,7 @@ public class FileHandling {
     public static List ScanFile() throws Exception {
         List taskList = new List();
         try {
-            File f = new File("D://Submissions//TRIES//JAVA INNVOTIVE//Source//try1.txt");
+            File f = new File("./Source/Data.txt");
             BufferedReader br = new BufferedReader(new FileReader(f));
             String st;
             while ((st = br.readLine()) != null) {

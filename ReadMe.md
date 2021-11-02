@@ -1,7 +1,7 @@
 # OOP Innovative Assignment
 
 Build using
-javac -cp "./;./ConsoleFun" Source/TestCF.java
+javac Source/Main.java
 
 Run using
-java -cp "./;./ConsoleFun" Source.TestCF
+java Source/Main
