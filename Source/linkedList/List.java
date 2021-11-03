@@ -122,8 +122,13 @@ public class List {
     public Node Delete(Node N) {
         if (N == Head) {
             // deletion at beginning
-            Head = N.Next;
-            Head.Prev = null;
+            if (N.Next != null) {
+                Head = N.Next;
+                Head.Prev = null;
+            } else {
+                Head = null;
+            }
+
         } else {
             N.Prev.Next = N.Next;
 

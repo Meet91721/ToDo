@@ -1,34 +1,27 @@
 package Source;
 
 import Source.linkedList.List;
-import Source.linkedList.Node;
-
-import Source.FileHandling;
 
 import Source.Frame.ListFrame;
-//import Source.Frame.NodeFrame;
 
 import javax.swing.*;
-import java.awt.*;
-
-import java.util.Scanner;
 
 public class Main {
+    public static JFrame mainFrame;
+    public static List taskList;
+    public static ListFrame taskListFrame;
+    public static FileHandling fh;
 
     public static void main(String[] args) throws Exception {
 
-        JFrame mainFrame = new JFrame();
+        mainFrame = new JFrame();
         mainFrame.setSize(1000, 800);
-        mainFrame.setVisible(true);
 
-        FileHandling fh = new FileHandling();
-        List taskList = fh.ScanFile();
-        Node curr = taskList.Head;
+        fh = new FileHandling();
+        taskList = fh.ScanFile();
 
-        ListFrame taskListFrame = new ListFrame(taskList);
-        taskListFrame.Print(mainFrame);
+        taskListFrame = new ListFrame(taskList);
+        taskListFrame.Print();
 
-        Scanner SC = new Scanner(System.in);
-        SC.nextInt();
     }
 }

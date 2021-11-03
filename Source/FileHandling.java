@@ -6,7 +6,6 @@ import java.io.File;
 import Source.linkedList.Node;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -29,7 +28,7 @@ public class FileHandling {
         }
     }
 
-    public static List ScanFile() throws Exception {
+    public List ScanFile() throws Exception {
         List taskList = new List();
         try {
             File f = new File("./Source/Data.txt");
