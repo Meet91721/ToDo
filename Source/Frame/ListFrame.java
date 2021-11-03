@@ -26,16 +26,16 @@ public class ListFrame extends List implements Frame {
         int Counter = 0;
 
         while (Temp != null) {
+            final Node t = Temp;
             System.out.println("Hello" + Counter);
             JLabel Label = new JLabel(Temp.Title);
             Label.setBounds(10, 10 + 15 * Counter, 200, 25);// x, y, w, h
 
             Label.addMouseListener(new MouseListener() {
                 public void mouseClicked(MouseEvent e) {
-                    // Node t = Temp;
                     Label.setText("Mouse Clicked");
-                    // current = new NodeFrame(t);
-                    // current.Print(mainFrame);
+                    current = new NodeFrame(t);
+                    current.Print(mainFrame);
                 }
 
                 public void mouseEntered(MouseEvent e) {
