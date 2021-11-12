@@ -27,7 +27,7 @@ public class ListFrame extends List implements Frame {
 
         while (Temp != null) {
             final Node t = Temp;
-            System.out.println("Hello" + Counter);
+            // System.out.println("Hello" + Counter);
             JLabel Label = new JLabel("<html><h1>" + Temp.Title + "</h1></html>");
             Label.setBounds(21, 17 + 37 * Counter, 200, 35);// x, y, w, h
 
